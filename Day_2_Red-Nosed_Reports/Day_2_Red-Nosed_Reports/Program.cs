@@ -30,6 +30,25 @@
                     {
                         return false;
                     }
+
+                    if (failCounter == 1)
+                    {
+                        var temp = new List<int>(report);
+                        temp.RemoveAt(level);
+
+                        if (MonotoneOfTheSequence(temp, ref failCounter))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            failCounter = 1;
+                            var temp2 = new List<int>(report);
+                            temp2.RemoveAt(level + 1);
+
+                            return MonotoneOfTheSequence(temp2, ref failCounter);
+                        }
+                    }
                 }
             }
 
@@ -48,11 +67,12 @@
                 var difference = report[level] - report[level + 1];
                 if (!(difference >= -3 && difference <= -1) && !(difference >= 1 && difference <= 3))
                 {
+                    
                     failCounter++;
                     if (failCounter > 1)
                     {
                         return false;
-                    }
+                    }                  
                 }
             }
 
