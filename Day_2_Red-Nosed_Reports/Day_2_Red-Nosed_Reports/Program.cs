@@ -6,6 +6,7 @@
         /// Determines whether the sequence is monotone.
         /// </summary>
         /// <param name="report">One row of levels.</param>
+        /// <param name="failCounter">Counter of failures.</param>
         /// <returns>Returns true if the sequence is monotone.</returns>
         static bool MonotoneOfTheSequence(List<int> report, ref int failCounter)
         {
@@ -30,7 +31,7 @@
                     {
                         return false;
                     }
-
+                    
                     if (failCounter == 1)
                     {
                         var temp = new List<int>(report);
@@ -59,20 +60,41 @@
         /// Determines the difference between levels.
         /// </summary>
         /// <param name="report">One row of levels.</param>
+        /// <param name="failCounter">Counter of failures.</param>
         /// <returns>Returns true if any two adjacent levels differ by at least one and at most three.</returns>
         static bool DifferenceOfLevels(List<int> report, ref int failCounter)
         {
             for (var level = 0; level < report.Count - 1; level++)
             {
-                var difference = report[level] - report[level + 1];
-                if (!(difference >= -3 && difference <= -1) && !(difference >= 1 && difference <= 3))
+                var difference = Math.Abs(report[level] - report[level + 1]);
+                if (!(difference >= 1 && difference <= 3))
                 {
                     
                     failCounter++;
                     if (failCounter > 1)
                     {
                         return false;
-                    }                  
+                    }
+
+                    if (failCounter == 1)
+                    {
+                        var temp = new List<int>(report);
+                        temp.RemoveAt(level);
+
+                        if (DifferenceOfLevels(temp, ref failCounter))
+                        {
+                            report = temp;
+
+                            return true;
+                        }
+                        else
+                        {
+                            failCounter = 1;
+                            report.RemoveAt(level + 1);
+
+                            return DifferenceOfLevels(report, ref failCounter);
+                        }
+                    }
                 }
             }
 
@@ -81,7 +103,7 @@
 
         static void Main(string[] args)
         {
-            var sr = new StreamReader("test_data.txt");
+            var sr = new StreamReader("unusual_data.txt");
             var safeCount = 0;
 
             while (!sr.EndOfStream)
