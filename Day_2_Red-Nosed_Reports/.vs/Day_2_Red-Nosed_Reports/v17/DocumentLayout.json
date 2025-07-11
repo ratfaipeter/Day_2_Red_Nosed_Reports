@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Peat\\github\\Day_2_Red-Nosed_Reports\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{28758604-CCD9-44C6-931A-94A19A18E1FE}|Day_2_Red-Nosed_Reports\\Day_2_Red-Nosed_Reports.csproj|c:\\users\\peat\\github\\day_2_red-nosed_reports\\day_2_red-nosed_reports\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28758604-CCD9-44C6-931A-94A19A18E1FE}|Day_2_Red-Nosed_Reports\\Day_2_Red-Nosed_Reports.csproj|solutionrelative:day_2_red-nosed_reports\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 221,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Peat\\github\\Day_2_Red-Nosed_Reports\\Day_2_Red-Nosed_Reports\\Program.cs",
+              "RelativeDocumentMoniker": "Day_2_Red-Nosed_Reports\\Program.cs",
+              "ToolTip": "C:\\Users\\Peat\\github\\Day_2_Red-Nosed_Reports\\Day_2_Red-Nosed_Reports\\Program.cs",
+              "RelativeToolTip": "Day_2_Red-Nosed_Reports\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-11T05:38:00.978Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
